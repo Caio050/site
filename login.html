@@ -8,9 +8,20 @@
 
 </head>
 <body>
-       
     <nav>
-   
+        <ul>
+            <li><a  href=" #" >inicio</a></li>
+            <li><a  href=" #" >Historia</a></li>
+            <li>
+                <a>Cadrastro</a>
+                <ul class="submenu">
+                    <li><a href="#"> Cliente PF</li>
+                    <li><a href="#"> Cliente PJ</li>
+                </ul>
+            </li>
+            <li><a href="#">Contato</a></li>
+
+        </ul>
     </nav>
     <div class="login-container">
         <h2>Login</h2>
@@ -24,14 +35,15 @@
                 <input type="password " id ="txtSenha" name="txtSenha" placeholder="Digite sua senha " required>
 
             </div>
-            
+            <div class="input-group">
+                <label for="txtSenha">Confirmar senha</label>
+                <input type="password " id ="txtSenha" name="txtconfirmarsenha" placeholder="Confirmar senha " required>
+
+            </div>
             
             <button type="submit">Entrar</button>
-
         </form>
     </div>
- 
-
     
 </body>
 </html>
