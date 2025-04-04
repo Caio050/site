@@ -1,125 +1,215 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    *{
+        padding: 0;
+        box-sizing: none;
+        margin: 0;
+        box-sizing: content-box;
+    }
+    body
+    {
+        font-family: Arial, sans-serif;
+        background-color: #D5BFA3;
+        text-align: center;
+        margin: 0;
+        padding: 0;    
+    }
+    nav
+    {
+        width: 11%;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        border-radius: 10px;
+        color: aliceblue;
 
-body {
-    font-family: Arial, sans-serif;
-    background: black;
-    text-align: center;
-    
-}
-
-nav {
-    background-color:#333;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    position: relative;
-    margin: 0 15px;
-}
-
-nav ul li a 
-{
+    }
+    nav a
+    {
     text-decoration: none;
     color: white;
-    font-size: 18px;
-    padding: 10px 15px;
-    background: #444;
-    border-radius: 5px;
-}
-
-    nav ul li a:hover {
-     background-color: #555;
+    margin: 0 15px; 
+    text-align: center;
+    justify-content: center;
     }
-
-    /* Submenu  */
-
-    nav ul .submenu {
-        display: none;
-        position: absolute;
-        background-color: #444;
-        list-style: none;
-        top:100%;
-        left: 0;
-        width: 150px;
-        border-radius: 5px;
+    nav img
+    {
+        display: flex;
+        height: auto;
+        padding-right: 20px;
+        width: 35px;
     }
-
-    nav ul li:hover .submenu {
-        display: block;
-        text-align: left;
+    .barra
+    {
+        text-align: center;
+        background-color: black;
+        color: white;
     }
+    .titulo
+    {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+        font-family: 'Great Vibes', cursive;
+        font-size: 48px; 
 
-    nav ul .submenu li a {
-        display: block;
+    }
+    .button-entrar
+    {
+        width: 50%;
         padding: 10px;
-        border-radius: 0;
+        background-color: #121312;
+        color: white;
+        border-radius: 10px;
+        margin: 10px ;
+    }
+    .button-entrar:hover{
+        background: #444;
+    }
+    .menu {
+        width: 11%;
+        padding: 70px;
+        
     }
 
-    /* Tela de Login  */
-
-    .login-container {
-        background-color: white ;
+    .menu a
+    {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+        
+        }   
+        .menu a:hover {
+            color: black;
+        }
+    form
+    {
         width: 350px;
-        margin: 80px auto;
         padding: 20px;
         border-radius: 10px;
-        text-align: left;
-    }
-
-    .login-container h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .input-group {
-        margin-bottom: 15px;
-    }
-
-    .input-group label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    .input-group input {
-        width: 100%;
-        padding: 10px;
         border: 1px solid #ccc;
-        border-radius: 5px;
+        margin: 250px auto;
+
+        background-color: white;
+
+    }
+    .logo {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 60px;
+        margin: 0;
+        padding: 10px;
+        align-items: center;
+        gap: 10px; 
+    }
+    input {
+        padding: 10px ;
+        border-radius: 10px ;
+        margin: 10px ;
+        }
+    .cafe
+    {
+
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 60px;
+        margin: 0;
+        padding: 10px;
+        align-items: center;
+        gap: 10px;     
+    }
+    .cafe img
+    {
+
+        width: 55px;
+        height: auto;
+        cursor: pointer;
+        padding: 5px;
     }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    
-    
-}     
+    .logo img {
+        width: 55px;
+        height: auto;
+        cursor: pointer;
+        padding: 5px;
+    }
 
-.foto{
-    width: 100%;
-    height: 1000px;
-    background-image: url('https://rehagro.com.br/blog/wp-content/uploads/2019/04/capa-producao-cafe-brasil.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-h1{
-    background-color: #ccc;
-}
+    .copo, .grao, .folha, .folha2 {
+        display: flex;
+        position: absolute;
+        width: 250px; 
+    }
+    
+    .copo {
+        right: 150px; 
+        bottom: 80px; 
+    }
+    
+    .grao {
+        right: 80px; 
+        bottom: 20px;
+        align-items: center; 
+        text-align: center;
+    }
+    
+    .folha {
+        left: auto;
+        bottom: 30px;
+        
+    }
+    
+    .folha2 {
+        right: 200px;
+        top: 100px;
+    }
+    
+    .copo img, .grao img, .folha img, .folha2 img {
+        width: 100%; /* Mantém o tamanho responsivo */
+        max-width: 250px; /* Define o mesmo tamanho para todas */
+    }
+    .grao {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); 
+        bottom: 20px; 
+        width: 200px; 
+    }
+    
+    .grao img {
+        width: 100%;
+        max-width: 300px; 
+    }
+    .texto
+    {
+        align-items: center;
+    }
+    
+    .texto p 
+    {font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    }
+    footer {
+        background-color: #3E2723;
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 20rem;
+    }
+    
+    
+    
+    
+
+
+
+
+
+
+
 

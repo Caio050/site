@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-
 </head>
 <body>
+    
+    <form>
+        <label for="txtusuario">Usuario</label> <p></p>
+        <input type="text" id="txtusuario" name="txtusuario" placeholder="Digite seu usuário" required><p></p>
+
+        <label for="txtsenha">Senha</label> <p></p>     <a href="senhaEsq.html">Esqueceu a senha ?</a><p></p>
+        <input type="password" id="txtsenha" name="txtsenha" placeholder="Digite sua senha" required><p></p>
+
+        <button type="button" class="button-entrar" >Entar</button> <p></p>
+
+        <a href="cadastro.html">Crie sua conta aqui</a>
+
+        <div class="copo">
+            <img src="cafe2.jpeg" alt="auto">
+        </div>
        
 
-    <div class="login-container">
-        <h2>Login</h2>
-        <form> 
-            <div class="input-group">
-                <label for="txtusuario">usuario</label>
-                <input type="text " id ="txtusuario" name="txtusuario" placeholder="Digite seu usuario" required>
-            </div>
-            <div class="input-group">
-                <label for="txtSenha">senha</label>
-                <input type="password" id ="txtSenha" name="txtSenha" placeholder="Digite sua senha " required>
 
-            </div>
-            
-            
-            <button type="button" value = "Entrar" onclick= "login()" id="btnEntrar">Entrar</button>
+        
 
-        </form>
-    </div>
- 
-
-    
+        
+    </form>
 </body>
 </html>
