@@ -52,7 +52,13 @@
         margin-top: 20px;
         font-family: 'Great Vibes', cursive;
         font-size: 48px; 
+        
 
+    }
+    .titulo a 
+    {
+        color: #3E2723;
+        text-decoration: none;
     }
     .button-entrar
     {
@@ -200,6 +206,46 @@
         padding: 2rem;
         text-align: center;
         margin-top: 20rem;
+    }
+    .cadastro
+    {
+        width: 350px;
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        margin: 45px auto;
+
+        background-color: white;
+    }
+    .cadastrar
+    {
+        width: 50%;
+        padding: 10px;
+        background-color: #121312;
+        color: white;
+        border-radius: 10px;
+        margin: 10px ;
+    }
+    .cadastrar:hover
+    {
+        background: #444;
+ 
+    }
+    .senha
+    {
+        text-decoration: none;
+        color: #121312;
+        font-size: 12px;  /* Aumenta o tamanho do texto */
+  font-weight: bold; /* Deixa o texto mais destacado */
+  text-align: right; /* Alinha o texto à direita */
+  display: block;    /* Garante que o alinhamento funcione corretamente */
+  margin-right: 10px;
+
+    }
+    .cria
+    {
+        text-decoration: none;
+        color: #121312;
     }
     
     
