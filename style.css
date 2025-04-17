@@ -235,10 +235,10 @@
     {
         text-decoration: none;
         color: #121312;
-        font-size: 12px;  /* Aumenta o tamanho do texto */
-  font-weight: bold; /* Deixa o texto mais destacado */
-  text-align: right; /* Alinha o texto à direita */
-  display: block;    /* Garante que o alinhamento funcione corretamente */
+        font-size: 12px;  
+          font-weight: bold; 
+  text-align: right; 
+  display: block;    
   margin-right: 10px;
 
     }
@@ -246,6 +246,17 @@
     {
         text-decoration: none;
         color: #121312;
+    }
+    .clima {
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 60px;
+        margin: 100;
+        padding: 10px;
+        align-items: center;
+        gap: 10px;
+        
     }
     
     
