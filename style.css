@@ -75,16 +75,24 @@
     .menu {
         width: 11%;
         padding: 70px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 20px;
         
     }
 
     .menu a
     {
         color: white;
-        margin: 0 15px;
+        margin: 0 40px;
         text-decoration: none;
         font-size: 18px;
         transition: color 0.3s;
+        text-align: center;
+        align-items: center;
         
         }   
         .menu a:hover {
@@ -247,19 +255,80 @@
         text-decoration: none;
         color: #121312;
     }
-    .clima {
+    .capu {
         display: flex;
-        position: absolute;
-        top: 10px;
-        right: 60px;
-        margin: 100;
-        padding: 10px;
-        align-items: center;
-        gap: 10px;
-        
+        justify-content: center;
+        gap: 30px;
+        padding: 20px;
+        flex-wrap: wrap;
     }
     
+    .produ {
+        background-color: #fff0f6;
+        border-radius: 16px;
+        padding: 20px;
+        width: 250px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
     
+    .produ img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+    
+    .produ h1, .produ h2,.produ h3,.produ h4,.produ h5,.produ h6 {
+        font-size: 18px;
+        margin: 10px 0;
+        color: #121312;
+    }
+    
+    .preco {
+        background-color: #121312;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 10px;
+        transition: background 0.3s;
+    }
+    
+    .preco:hover {
+        background-color: #b83d7f;
+    }
+    
+    R1 {
+        font-style: normal;
+    }
+   
+ body.fundo{
+    background-color: #383b38;
+
+}
+.titulo-f
+{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px; 
+    
+
+}
+.titulo-f a 
+{
+    color: #ccc;
+    text-decoration: none;
+}
+.logo2-f{
+fill: #ccc;
+}
+
+
     
     
 

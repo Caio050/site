@@ -1,121 +1,68 @@
+function validarcadastro() {
+    const nome = document.getElementById("txtnome").value.trim();
+    const sobrenome = document.getElementById("txtsobrenome").value.trim();
+    const senha = document.getElementById("txtsenha").value.trim();
+    const confisenha = document.getElementById("txtconfisenha").value.trim();
+    const datanasc = document.getElementById("txtdata").value;
+    const cep = document.getElementById("txtcep").value.trim();
 
-function validarcadastro()
-{
-
-    let usuario = document.getElementById('txtnome').value.trim();
-    
-    let sobrenome = document.getElementById('txtsobrenome').value.trim();
-
-    let senha = document.getElementById('txtsenha').value.trim();
-    let confisenha = document.getElementById('txtconfisenha').value.trim();
-    let datanasc = document.getElementById('txtdata').value;
-
-    if (usuario == "Caio" && sobrenome =="Meira" && senha =="123" && confisenha== senha){
-        window.location.href = "index.html";
-    }
-
-    if (usuario ==""){
-        alert("Por favor, preencher usuario");
-        return;
-
-    } else if (sobrenome == ""){
-        alert("Por favor, preencher o sobrenome");
-        return;
-    } else if (senha == ""){
-        alert("Por favor , preencha a senha");
-        return;
-
-    } else if (confisenha == ""){
-        alert("Por fazer, confirmar senha");
-        return;
-    }
-    if (!validarIdade(datanasc)) {
-
-        alert("Você deve ser maior de idade para se cadastrar.");
-
-        return;
-
-    }
-    function validarIdade(datanasc) {
-
-        const hoje = new Date();
-    
-        const nascimento = new Date(datanasc);
-    
-    
-    
-        let idade = hoje.getFullYear() - nascimento.getFullYear();
-    
-        const mes = hoje.getMonth() - nascimento.getMonth();
-    
-    
-    
-        if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
-    
-            idade--;
-    
-        }
-    
-    
-    
-        return idade >= 18;
-    
-    }
-    
-
-}
-function buscarClima(cep) {
-    const widget = document.getElementById("clima");
-    const apiKey = "SUA_API_KEY_AQUI"; // Coloque sua chave da OpenWeatherMap aqui
-
-    if (!cep || cep.length !== 8) {
-      widget.innerText = "CEP inválido.";
+    if (!nome || !sobrenome || !senha || !confisenha || !datanasc || !cep) {
+      alert("Preencha todos os campos.");
       return;
     }
 
+    if (senha !== confisenha) {
+      alert("Senhas são diferentes.");
+      return;
+    }
+
+    if (!validarIdade(datanasc)) {
+      alert("Você deve ter 18 anos ou mais.");
+      return;
+    }
+    localStorage.setItem("cepCliente", cep);
+
+    window.location.href = "index.html";
+  }
+
+  function validarIdade(datanasc) {
+    const hoje = new Date();
+    const nascimento = new Date(datanasc);
+    let idade = hoje.getFullYear() - nascimento.getFullYear();
+    const mes = hoje.getMonth() - nascimento.getMonth();
+
+    if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
+      idade--;
+    }
+
+    return idade >= 18;
+}
+function buscarEndereco() {
+    const cep = document.getElementById("txtcep").value.trim();
+
+    // Valida se o campo tem 8 dígitos numéricos
+    if (!/^[0-9]{8}$/.test(cep)) {
+      alert("Digite um CEP válido com 8 números.");
+      return;
+    }
+
+    // Faz a requisição para a API do ViaCEP
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
-      .then(res => res.json())
+      .then(resposta => resposta.json())
       .then(dados => {
         if (dados.erro) {
-          widget.innerText = "CEP não encontrado.";
-          return;
+          document.getElementById("resultado").innerText = "CEP não encontrado.";
+        } else {
+          document.getElementById("resultado").innerHTML = `
+            <strong>Endereço encontrado:</strong><br>
+            Rua: ${dados.logradouro}<br>
+            Bairro: ${dados.bairro}<br>
+            Cidade: ${dados.localidade} - ${dados.uf}
+          `;
         }
-
-        const cidade = dados.localidade;
-        const estado = dados.uf;
-
-        return fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade},${estado},BR&appid=${apiKey}&lang=pt_br&units=metric`);
-      })
-      .then(res => res.json())
-      .then(clima => {
-        if (!clima || clima.cod !== 200) {
-          widget.innerText = "Clima não disponível.";
-          return;
-        }
-
-        widget.innerHTML = `
-           ${clima.name}/${clima.sys.country}<br>
-           ${Math.round(clima.main.temp)}°C<br>
-           ${clima.weather[0].description}
-        `;
-      })
-      .catch(() => {
-        widget.innerText = "Erro ao obter clima.";
+    })
+      .catch(erro => {
+        console.error("Erro ao buscar o CEP:", erro);
+        document.getElementById("resultado").innerText = "Erro na consulta.";
       });
-  }
-
-  // Executa quando a página carrega
-  window.onload = () => {
-    const cep = localStorage.getItem("cepCliente");
-    if (cep) {
-      buscarClima(cep);
-    } else {
-      document.getElementById("clima").innerText = "Informe o CEP no cadastro.";
     }
-  }
-
-
-
-
-
-
