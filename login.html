@@ -14,19 +14,20 @@
         
     </div>
     <form>
-        <label for="txtusuario">Usuario</label> <p></p>
-        <input type="text" id="txtusuario" name="txtusuario" placeholder="Digite seu usuário" required><p></p>
+        <label for="txtemail">Email</label> <p></p>
+        <input type="email" id="txtemail" name="txtemail" placeholder="Digite seu Email" required><p></p>
 
         <label for="txtsenha">Senha</label> <p></p>     <a href="senhaEsq.html" class="senha">Esqueceu a senha ?</a><p></p>
         <input type="password" id="txtsenha" name="txtsenha" placeholder="Digite sua senha" required><p></p>
 
-        <button type="button" class="button-entrar" >Entar</button> <p></p>
+        <button type="button" class="button-entrar" onclick="login()">Entar</button> <p></p>
 
         <a href="cadastro.html" class="cria">Crie sua conta aqui</a>
 
         <div class="copo">
             <img src="cafe2.jpeg" alt="auto">
         </div>
+
        
 
 
@@ -34,5 +35,7 @@
 
         
     </form>
+
+    <script src="script.js"></script>
 </body>
 </html>

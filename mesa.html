@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="mesa">
+
+        
+    <h1>Agendamento de Mesa</h1>
+
+    <div class="mesa-container">
+        <div class="mesa disponivel" onclick="agendarMesa(this)">Mesa 1</div>
+        <div class="mesa indisponivel" onclick="alert('Mesa já agendada')">Mesa 2</div>
+        <div class="mesa disponivel" onclick="agendarMesa(this)">Mesa 3</div>
+    </div>
+
+    <div class="agendamento-container">
+        <input type="datetime-local" id="dataHora" required>
+        <input type="text" id="nomeCliente" placeholder="Seu nome" required>
+        <button id="agendarButton" onclick="finalizarAgendamento()">Agendar</button>
+    </div>
+
+    <div class="feedback">
+        <p>Agendamento confirmado! Aguardamos você!</p>
+    </div>
+
+</body>
+</html>
