@@ -3,48 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Tela de cadastro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="titulo"> 
+     <header>
+        <nav>
+            <div class="logo"><a href="index.html">Localle Cafe</a></div>
+            <div class="menu">
+                <a href="https://wa.me/5511954846380">Contato</a>
+                <a href="#" onclick="mostrarCardapio()">Cardápio</a>
+                <a href="#" onclick="mostrarReservas()">Reservas</a>
+                <a href="login.html" id="btnLogin">Entrar</a>
+                <a href="#" onclick="mostrarPerfil()">Meu Perfil</a>
+                <a href="#" onclick="mostrarCarrinho()">Minhas Reservas</a>
 
-        <a href="index.html">O melhor café de São Paulo</a>
-        
-    </div>
-
+            </div>
+        </nav>
+    </header>
     
-    <div class="copo">
-        <img src="cafe2.jpeg" alt="auto">
-    </div>
+     <form class="formulario-container">
+        <div class="campo">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" required>
+        </div>
+        <div class="campo">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="campo">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" required>
+        </div>
+        <div class="campo">
+            <label for="confisenha">Confirmar Senha:</label>
+            <input type="password" id="confisenha" required>
+        </div>
+        <div class="campo">
+            <label for="data">Data de Nacismento:</label>
+            <input type="date" id="data" required>
+        </div>
+        <div class="campo">
+            <label for="Cep">Cep:</label>
+            <input type="number" id="Cep" required>
+        </div>
 
-    <form class="cadastro">
-        <label for="txtnome">Nome</label><br><br>
-        <input type="text" id="txtnome" required placeholder="Digite seu nome"><br><br>
 
-        <label for="txtsobrenome">Sobrenome</label><br><br>
-        <input type="text" id="txtsobrenome" required placeholder="Digigte seu sobre nome"><br><br>
-
-        <label for="txtemail">Email</label> <br>
-        <input type="email" id="txtemail" placeholder="Digite seu Email" required> <br>
-
-        <label for="txtsenha">Senha</label><br><br>
-        <input type="password" id="txtsenha" required placeholder="Digite uma Senha"><br><br>
-
-        <label for="txtconfisenha">Confirmar Senha</label><br><br>
-        <input type="password" id="txtconfisenha" required placeholder="Confirme sua senha"><br><br>
-
-        <label for="txtdata">Data de nascimento</label><br><br>
-        <input type="date" id="txtdata" required><br><br>
-
-        <label for="txtcep">Cep</label> <br>
-        <input type="number" id="txtcep" required placeholder="Informe seu Cep">
-
-        <button type="button" class="cadastrar" onclick="validarcadastro()">Cadastrar</button>
+        <button type="submit" class="botao-principal" onclick="validarcadastro(event)">Cadastrar</button>
     </form>
-    <script src="script.js"></script>
 
-
+    <script src="java.js"></script>
 </body>
 </html>

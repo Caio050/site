@@ -7,35 +7,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="titulo"> 
+     <header>
+        <nav>
+            <div class="logo"><a href="index.html">Localle Cafe</a></div>
+           
+    </header>
 
-        <a href="index.html">O melhor café de São Paulo</a>
-        
-    </div>
-    <form>
-        <label for="txtemail">Email</label> <p></p>
-        <input type="email" id="txtemail" name="txtemail" placeholder="Digite seu Email" required><p></p>
-
-        <label for="txtsenha">Senha</label> <p></p>     <a href="senhaEsq.html" class="senha">Esqueceu a senha ?</a><p></p>
-        <input type="password" id="txtsenha" name="txtsenha" placeholder="Digite sua senha" required><p></p>
-
-        <button type="button" class="button-entrar" onclick="login()">Entar</button> <p></p>
-
-        <a href="cadastro.html" class="cria">Crie sua conta aqui</a>
-
-        <div class="copo">
-            <img src="cafe2.jpeg" alt="auto">
-        </div>
-
+            <div class="formulario-container">
+                <h2>Entrar</h2>
+                <form id="formLogin">
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="campo">
+                        <label for="senha">Senha:</label> <p></p>      
+                        <a href="#" class="esqueci-senha" onclick="mostrarRecuperarSenha()" >Esqueceu sua senha?</a><p></p>
+                        <input type="password" id="senha" required>                     
+                    </div>
+                            <button type="submit" class="botao-principal" onclick="login(event)">Entrar</button>
+           <p class="texto-centro">
+                    </p>
+                </form>
+                <p class="texto-centro">
+                    Não tem uma conta? <a href="cadastro.html" onclick="mostrarCadastro()">Cadastre-se</a>
+                </p>
+            </div>
        
 
+         <!-- Seção de Recuperação de Senha -->
+        <section id="recuperarSenha" class="secao-recuperar-senha escondido">
+            <div class="formulario-container">
+                <h2>Recuperar Senha</h2>
+                <p class="texto-centro mb-4">Digite seu e-mail para receber as instruções de recuperação de senha.</p>
+                <form id="formRecuperarSenha" onsubmit="recuperarSenha(event)">
+                    <div class="campo">
+                        <label for="emailRecuperar">E-mail:</label>
+                        <input type="email" id="emailRecuperar" required>
+                    </div>
+                    <button type="submit" class="botao-principal">Enviar</button>
+                </form>
+                <p class="texto-centro">
+                    <a href="#" onclick="mostrarLogin()">Voltar para o login</a>
+                </p>
+            </div>
+        </section>
 
-        
-
-        
-    </form>
-
-    <script src="script.js"></script>
+ <script src="java.js"></script>
 </body>
 </html>

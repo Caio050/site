@@ -1,80 +1,182 @@
-    <!DOCTYPE html>
-    <html lang="br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Locale Caffe</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-
-        <div class="barra">Venha nos conhecer</div>
-        
-
-        <div class="titulo"> 
-
-            <a href="index.html">O melhor café de São Paulo</a>
-
-        </div>
-        <nav class="menu">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localle Caffe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="logo"><a href="index.html">Localle Cafe</a></div>
+        <div class="menu">
             <a href="https://wa.me/5511954846380">Contato</a>
-            <a href="#Promocoes">Promoções</a>
-            <a href="produtos.html">Cappuccinos</a>
-            <a href="#Localização">Localização</a>  
-            <a href="#Agentamento">Agentamento</a>
-            <a href="#sobre">Sobre</a>
-            
-    
-            
-        </nav>
-
-    <div class="logo">
-
-            <a href="login.html" class="logo"><img src="logo100.jpeg" alt="auto"></a> 
-    </div>
-        <div class="logo2">
-            <a href="" class="cafe"> <img src="cafe100.jpeg" alt="auto"></a>
-    </div>
+            <a href="#" onclick="mostrarCardapio()">Cardápio</a>
+            <a href="#" onclick="mostrarReservas() ">Fazer Reserva</a> 
+            <a href="login.html" id="btnLogin">Entrar</a>
+            <a href="#" onclick="mostrarPerfil()">Meu Perfil</a>
+            <a href="#" onclick="mostrarCarrinho()">Minhas Reservas</a> </div>
+    </nav>
+</header>
 
 
+    <main>
+        <section id="inicio" class="secao-principal">
+            <h1>Bem-vindo ao Localle Cafe</h1>
+            <p>Reserve sua mesa e desfrute do melhor café da cidade</p>
+            <button onclick="mostrarReservas()" class="botao-principal">Fazer Reserva</button>
+        </section>
 
-    <div class="texto">
-        <h1>Locale Caffe.</h1>
-        <p>Locale Caffe, cada xícara conta uma história. Somos apaixonados por café e dedicamos cada detalhe para oferecer 
-            uma experiência única, desde os grãos selecionados até o aroma irresistível que envolve nosso espaço.
-            Aqui, você encontra cafés especiais, preparados com excelência, acompanhados de um ambiente acolhedor e um cardápio
-            repleto de sabores incríveis. Seja para começar o dia com energia, relaxar à tarde ou compartilhar bons momentos, 
-            a Los Caffè é o seu refúgio perfeito.
-            Venha nos visitar e descubra o sabor do verdadeiro café</p>  </div>
+        <section id="perfil" class="secao-perfil escondido">
+            <div class="formulario-container">
+                <h2>Meu Perfil</h2>
+                <form id="formPerfil" onsubmit="atualizarPerfil(event)">
+                    <div class="campo">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone:</label>
+                        <input type="tel" id="telefone" required>
+                    </div>
+                    <div class="campo">
+                        <label for="senhaNova">Nova Senha (opcional):</label>
+                        <input type="password" id="senhaNova">
+                    </div>
+                    <div class="campo">
+                        <label for="confirmarSenha">Confirmar Nova Senha:</label>
+                        <input type="password" id="confirmarSenha">
+                    </div>
+                    <button type="submit" class="botao-principal">Salvar Alterações</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="fazer-reserva" class="secao-fazer-reserva escondido"> <h2>Fazer Reserva</h2>
+            <div class="formulario-container">
+                <form id="formReserva" onsubmit="fazerReserva(event)">
+                    <div class="campo">
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" required min="">
+                    </div>
+                    <div class="campo">
+                        <label for="hora">Hora:</label>
+                        <input type="time" id="hora" required>
+                    </div>
+                    <div class="campo">
+                        <label for="pessoas">Número de pessoas:</label>
+                        <select id="pessoas" required>
+                            <option value="1">1 pessoa</option>
+                            <option value="2">2 pessoas</option>
+                            <option value="3">3 pessoas</option>
+                            <option value="4">4 pessoas</option>
+                            <option value="5">5 pessoas</option>
+                            <option value="6">6 pessoas</option>
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label>Localização:</label>
+                        <div class="opcoes-mesa">
+                            <label>
+                                <input type="radio" name="localizacao" value="interno" required>
+                                Ambiente Interno
+                            </label>
+                            <label>
+                                <input type="radio" name="localizacao" value="externo">
+                                Ambiente Externo
+                            </label>
+                            <label>
+                                <input type="radio" name="localizacao" value="bar">
+                                Bar
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="botao-principal">Confirmar Reserva</button>
+                </form>
+                <p class="texto-centro mt-4">
+                    <small>Ao fazer uma reserva, você concorda com nossa <a href="#" onclick="mostrarPoliticaPrivacidade()">Política de Privacidade</a></small>
+                </p>
+            </div>
+        </section>
 
 
-    <div class="copo">
-        <img src="cafe2.jpeg" alt="auto">
-    </div>
+<!-- Carrinho de Reservas separado corretamente -->
+<section id="carrinho" class="secao-carrinho escondido">
+    <h2>Minhas Reservas</h2>
+    <div class="lista-carrinho"></div>
+    <button onclick="voltarPagina()" class="botao-principal mt-4">Voltar</button>
+</section>
 
-    <div class="grao">
-        <img src="grao.jpeg" alt=" auto">
-    </div>
 
-    <div class="folha">
-        <img src="folha.jpeg" alt="auto">
-    </div>
-        
-    <div class="folha2">
-        <img src="folha2.jpeg" alt="auto">
-    </div>
 
-    <footer >
-        <div class="rodape-conteudo">
-        <p> Locale caffe - Todos os direitos reservados.</p>
-            <p>Avenidas das Almas, 123 - São Paulo, SP</p>
-            <p>Contato: (11) 99999-9999</p>
-        </div>
+        <section id="cardapio" class="secao-cardapio escondido">
+            <h2>Nosso Cardápio</h2>
+            <div class="categorias">
+                <button onclick="filtrarCardapio('cafe')" class="ativo">Cafés</button>
+                <button onclick="filtrarCardapio('doces')">Doces</button>
+                <button onclick="filtrarCardapio('salgados')">Salgados</button>
+            </div>
+            <div class="itens-cardapio">
+            </div>
+        </section>
+
+
+        <section id="politicaPrivacidade" class="secao-politica escondido">
+            <div class="formulario-container">
+                <h2>Política de Privacidade</h2>
+                <div class="conteudo-politica">
+                    <h3>1. Informações Coletadas</h3>
+                    <p>Coletamos as seguintes informações:</p>
+                    <ul>
+                        <li>Nome completo</li>
+                        <li>E-mail</li>
+                        <li>Telefone</li>
+                        <li>Dados de reservas</li>
+                    </ul>
+
+                    <h3>2. Uso das Informações</h3>
+                    <p>Utilizamos seus dados para:</p>
+                    <ul>
+                        <li>Gerenciar suas reservas</li>
+                        <li>Enviar confirmações</li>
+                        <li>Melhorar nossos serviços</li>
+                        <li>Comunicação sobre promoções (com seu consentimento)</li>
+                    </ul>
+
+                    <h3>3. Armazenamento</h3>
+                    <p>Seus dados são armazenados localmente e tratados com total segurança.</p>
+
+                    <h3>4. Seus Direitos</h3>
+                    <p>Você tem direito a:</p>
+                    <ul>
+                        <li>Acessar seus dados</li>
+                        <li>Corrigir seus dados</li>
+                        <li>Excluir seus dados</li>
+                        <li>Revogar consentimento</li>
+                    </ul>
+
+                    <button onclick="voltarPagina()" class="botao-principal mt-4">Voltar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin" class="secao-admin escondido">
+            <h2>Painel Administrativo</h2>
+            <div class="lista-reservas">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Localle Caffe &copy; 2025 - Todos os direitos reservados</p>
+        <p><a href="#" onclick="mostrarPoliticaPrivacidade()">Política de Privacidade</a></p>
     </footer>
 
-
-   
-
-    </body>
-    </html>
+    <script src="java.js"></script>
+</body>
+</html>
