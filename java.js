@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function mostrarReservas() {
     if (!usuarioAtual) {
         alert('Por favor, faça login para realizar uma reserva');
-        window.location.href = 'login.html'; // redireciona direto
+        window.location.href = 'login.html';
         return;
     }
     mostrarSecao('fazer-reserva');
@@ -218,6 +218,7 @@ function carregarCarrinho() {
     const usuarioAtual = JSON.parse(localStorage.getItem('usuarioAtual'));
     if (!usuarioAtual) {
         lista.innerHTML = '<p>Você precisa estar logado para ver suas reservas.</p>';
+
         return;
     }
 
@@ -226,6 +227,7 @@ function carregarCarrinho() {
 
     if (reservasUsuario.length === 0) {
         lista.innerHTML = '<p>Você não possui reservas no momento.</p>';
+
         return;
     }
 
@@ -264,13 +266,7 @@ function esconderTodasSecoes() {
     });
 }
 
-// Função para voltar para a página inicial
-function voltarPagina() {
-    esconderTodasSecoes();
-    document.getElementById('inicio').classList.remove('escondido');
-}
-
-
+ 
     // Previsão do tempo
     async function buscarPrevisaoTempo() {
         try {
